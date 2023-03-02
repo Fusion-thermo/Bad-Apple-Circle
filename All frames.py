@@ -1,7 +1,6 @@
 #https://gist.github.com/DIYer22/f82dc329b27c2766b21bec4a563703cc
 import cv2
 import numpy as np
-from PIL import Image
 from Chemin import chemin
 import time
 
@@ -12,7 +11,7 @@ pathsavetest=chemin+"Bad-Apple-Circle/Tests/"
 pathsave=chemin+"Bad-Apple-Circle/Frames/"
 
 debut=time.time()
-start=657
+start=1
 #for frame in test_frames:
 for frame in range(start,6573):
     print(frame)
@@ -48,5 +47,5 @@ for frame in range(start,6573):
     for center in circles.keys():
         cv2.circle(new, (center[0]*2,center[1]*2), int(circles[center]*2), color, -1)
     cv2.imwrite(pathsave+str(frame)+".png",new)
+    #cv2.imwrite(pathsavetest+str(frame)+".png",new)
     print("Mean time : {0}s per frame. Estimated duration : {1}h. Will end on {2}".format(round((time.time()-debut)/(frame+1-start),1), round((6572-frame)*(time.time()-debut)/((frame+1-start)*3600),1), time.asctime(time.localtime(debut+(6572-start)*(time.time()-debut)/(frame+1-start)))))
-#    cv2.imwrite(pathsavetest+str(frame)+".png",new)
