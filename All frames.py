@@ -1,4 +1,5 @@
-#https://gist.github.com/DIYer22/f82dc329b27c2766b21bec4a563703cc
+""" Inspired by : https://gist.github.com/DIYer22/f82dc329b27c2766b21bec4a563703cc
+from https://stackoverflow.com/questions/4279478/largest-circle-inside-a-non-convex-polygon """
 import cv2
 import numpy as np
 from Chemin import chemin
