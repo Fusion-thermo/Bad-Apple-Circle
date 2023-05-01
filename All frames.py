@@ -2,14 +2,23 @@
 from https://stackoverflow.com/questions/4279478/largest-circle-inside-a-non-convex-polygon """
 import cv2
 import numpy as np
-from Chemin import chemin
 import time
+import os
 
 test_frames=[1,300,500,1246,4798,6238,418,2171]
 
-path=chemin+'Bad-Apple-circles/Bad Apple frames/'
-pathsavetest=chemin+"Bad-Apple-Circle/Tests/"
-pathsave=chemin+"Bad-Apple-Circle/Frames/"
+path=os.path.realpath(__file__)
+fin=-1
+while path[fin]!="\\":
+    fin-=1
+chemin=path[:fin+1].replace('\\','/')
+fin-=1
+while path[fin]!="\\":
+    fin-=1
+chemin_frames=path[:fin+1].replace('\\','/')
+path=chemin_frames+'Bad-Apple-circles/Bad Apple frames/'
+pathsavetest=chemin+"Tests/"
+pathsave=chemin+"Frames/"
 
 debut=time.time()
 start=1
