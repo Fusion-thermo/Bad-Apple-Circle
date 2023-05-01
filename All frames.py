@@ -8,17 +8,14 @@ import os
 test_frames=[1,300,500,1246,4798,6238,418,2171]
 
 path=os.path.realpath(__file__)
-fin=-1
-while path[fin]!="\\":
-    fin-=1
-chemin=path[:fin+1].replace('\\','/')
-fin-=1
-while path[fin]!="\\":
-    fin-=1
-chemin_frames=path[:fin+1].replace('\\','/')
-path=chemin_frames+'Bad-Apple-circles/Bad Apple frames/'
+fin=path.rfind('\\')
+chemin=path[:fin+1]
 pathsavetest=chemin+"Tests/"
 pathsave=chemin+"Frames/"
+fin=chemin[:-1].rfind('\\')
+chemin_frames=path[:fin+1]
+path=chemin_frames+'Bad-Apple-circles/Bad Apple frames/'
+
 
 debut=time.time()
 start=1
